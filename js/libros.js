@@ -2,37 +2,45 @@ var aplic = angular.module('buscarLibro', []);
 aplic.controller('buscarCtrl', function($scope,$http){
 
     $scope.books = [];
+    $scope.originalBooks = [];
 
     $scope.getBooks = function () {
+      if (!$scope.searchTerm) {
+        // Restablecer a la lista original cuando el término de búsqueda está vacío
+        $scope.books = angular.copy($scope.originalBooks);
+        return;
+      }
+
       $http.get("http://openlibrary.org/search.json?q=" + $scope.searchTerm)
         .then(function (response) {
-            $scope.books = [];
-            $scope.getBooks = function () {
-              $http.get("http://openlibrary.org/search.json?q=" + $scope.searchTerm)
-                .then(function (response) {
-                  $scope.books = [];
-    
-                  if (!response.data.docs.length) {
-                    $scope.books.push({
-                      title: 'No se encontraron libros',
-                      author_name: [''],
-                      first_publish_year: ''
-                    });
-                  } else {
-                    for (var i = 0; i < Math.min(response.data.docs.length, 10); i++) {
-                      $scope.books.push({
-                        title: response.data.docs[i].title,
-                        author_name: response.data.docs[i].author_name,
-                        first_publish_year: response.data.docs[i].first_publish_year,
-                        isbn: response.data.docs[i].isbn
-                      });
-                    }
-                  }
-                });
-            };
-    
+          $scope.books = [];
+
+          if (!response.data.docs.length) {
+            $scope.books.push({
+              title: 'No se encontraron libros',
+              author_name: [''],
+              first_publish_year: ''
+            });
+          } else {
+            for (var i = 0; i < Math.min(response.data.docs.length, 10); i++) {
+              $scope.books.push({
+                title: response.data.docs[i].title,
+                author_name: response.data.docs[i].author_name,
+                first_publish_year: response.data.docs[i].first_publish_year,
+                isbn: response.data.docs[i].isbn
+              });
+            }
+          }
         });
     };
+
+    $scope.update = function (){
+      if($scope.searchTerm == ''){
+        $scope.books = [];
+      }
+      
+    }
+});
 
    /* $scope.getBooks = function(){
         document.getElementById('salida').innerHTML="";
@@ -57,8 +65,6 @@ aplic.controller('buscarCtrl', function($scope,$http){
             
         })
     }*/
-});
-
 
 /* function getBooks(){
      document.getElementById('salida').innerHTML="";

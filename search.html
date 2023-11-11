@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> 
+    <link rel="stylesheet" href="stylo2.css">
+    <title>Libros 😁</title>
+</head>
+<body>
+            <div class="search-container" data-ng-app="buscarLibro" data-ng-controller="buscarCtrl">
+                <input type="text" id="entrada" class="search-input" placeholder="Buscar..." data-ng-model="searchTerm" data-ng-change="update()">
+                 <button data-ng-click="getBooks()" type="submit" class="search-button">Buscar</button>  
+                 <div>
+                     <ul id="salida" class="book-list">
+                         <li class="book-item" data-ng-repeat="book in books">
+                             <strong>Nombre del Libro:</strong> {{ book.title }}<br>
+                             <strong>Autor:</strong> {{ book.author_name ? book.author_name[0] : 'Desconocido' }}<br>
+                             <strong>Año de Publicación:</strong> {{ book.first_publish_year || 'Desconocido' }}
+                              <br><img data-ng-src="http://covers.openlibrary.org/b/isbn/{{ book.isbn ? book.isbn[0] : '' }}-M.jpg" alt="Portada del libro"><br>
+                         </li>
+                      </ul>
+                 </div> 
+         </div> 
+    <script src="js/libros.js"></script>
+</body>
+</html>
+
+

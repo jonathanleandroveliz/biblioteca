@@ -1,9 +1,15 @@
+/*#principal{
+  min-height: 100vh;
+  background: url("photo.jpg") no-repeat center center fixed;
+  background-size: cover;
+}*/
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background: url('biblioteca.jpeg') ;
+  background-image: url("./img/biblioteca.jpeg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .search-container {
