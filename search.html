@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Estilos básicos para el contenedor del formulario */
+    .search-container {
+      position: relative;
+      max-width: 300px;
+      margin: 0 auto;
+      overflow: hidden; /* Oculta la barra de búsqueda cuando no está en hover */
+      border-radius: 25px; /* Bordes circulares para el contenedor */
+    }
+
+    /* Estilos para la barra de búsqueda */
+    .search-input {
+      width: 0; /* Inicialmente, la barra de búsqueda tiene ancho cero */
+      padding: 8px;
+      box-sizing: border-box;
+      border: 2px solid #ffffff;
+      border-radius: 25px; /* Bordes circulares para la barra de búsqueda */
+      transition: width 0.3s, border-color 0.0s; /* Transiciones para el cambio de ancho y color del borde */
+    }
+
+    /* Estilos para el botón de búsqueda */
+    .search-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 0 25px 25px 0;
+      cursor: pointer;
+      transition: background-color 0.0s; /* Transición para el cambio de color de fondo */
+    }
+
+    /* Efecto hover para el botón de búsqueda */
+    .search-container:hover .search-button {
+      background-color: #45a049;
+    }
+
+    /* Efecto hover para la barra de búsqueda */
+    .search-container:hover .search-input {
+      width: 100%; /* Amplía el ancho de la barra de búsqueda al hacer hover */
+      border-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="search-container" data-ng-app="buscarLibro" data-ng-controller="buscarCtrl">
+    <input type="text" id="entrada" class="search-input" placeholder="Buscar...">
+    <button data-ng-click="getBooks()" type="submit" class="search-button">Buscar</button>
+  </div>
+
+</body>
+</html>
