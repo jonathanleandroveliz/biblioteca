@@ -1,0 +1,99 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+}
+
+header {
+background-color: #cf6262;
+color: #fff;
+padding: 10px;
+text-align: center;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+#logo-container {
+display: flex;
+align-items: center;
+}
+
+#logo-container img {
+height: 60px;
+margin-right: 10px;
+}
+
+
+
+nav {
+display: flex;
+justify-content: center;
+background-color: #cf6262;
+padding: 10px;
+}
+
+nav a {
+color: #f3f3f3;
+text-decoration: none;
+margin: 0 15px;
+transition: color 0.3s ease-in-out; /* Efecto de transición para el cambio de color */
+}
+
+nav a:hover {
+text-decoration: underline;
+color: #ffd700; /* Color amarillo al hacer hover */
+}
+
+/* Estilos para las secciones de parallax scrolling */
+.parallax-section {
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding-top: 100px;
+}
+
+#seccion1 {
+    background-image: url('./img/libros-1.jpg');
+}
+
+#seccion2 {
+    background-image: url('./img/libro3.jpg');
+}
+
+#seccion3 {
+    background-image: url('./img/librosdetexto.jpeg');
+}
+
+section{
+display: flex;
+width: 100%;
+height: 100%;
+} 
+
+section img {
+width: 0px;
+flex-grow: 1;
+object-fit: cover;
+opacity: .8;
+transition: .5s ease;
+}
+
+section img:hover{
+cursor: crosshair;
+width: 130px;
+opacity: 1;
+filter: contrast(120%);
+}
+
+
+@media only screen and (max-width: 768px) {
+    .parallax-section {
+        height: 300px;
+        padding: 50px 20px;
+    }
+}
