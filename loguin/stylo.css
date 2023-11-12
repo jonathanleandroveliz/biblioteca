@@ -1,26 +1,32 @@
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #212121;
+  color: #fff;
+  font-family: monospace, serif;
+  letter-spacing: 0.05em;
 }
 
-.izquierda{
-    background: black;
-    height: 100vh;
-    width: 50%;
+#pantalla-dividia {
+  display: flex;
+  height: 100vh;
 }
 
-.derecha{
-    background: url(istock-944631208_28a03c99_800x800.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 50%;
-    height: 100vh;
+.izquierda {
+  background: black;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#pantalla-dividia{
-    display: flex;
+.derecha {
+  background: url("../img/test-libros1.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  height: 100vh;
 }
-
 
 *,
 ::after,
@@ -175,4 +181,16 @@ h1 {
 }
 .credits a:hover {
   opacity: 1;
+}
+
+
+@media screen and (max-width: 768px) {
+  #pantalla-dividia {
+    flex-direction: column;
+  }
+
+  .izquierda,
+  .derecha {
+    width: 100%;
+  }
 }
