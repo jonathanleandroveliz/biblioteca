@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    background-image: url("./img/abundante-coleccion-libros-antiguos-estantes-madera-generados-ia_188544-29660.jpg"); 
+ 
+  }
+
+  #libros-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+
+  .libro {
+    margin: 20px;
+    width: calc(25% - 40px); 
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+
+  .libro:hover {
+    transform: scale(1.05);
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card figure {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .contenido {
+    padding: 15px;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
+  p {
+    color: #666;
+  }
+
+  a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #3498db;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  #search-container {
+    margin: 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    border: 1px solid #a13232;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 300px;
+    margin-right: 10px;
+  }
+
+  button {
+    padding: 10px;
+    color: #da5050;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .credits {
+   align-self: flex-end;
+   padding: 15px 15px;
+   z-index: 111;
+  }
+  .credits a {
+    opacity: 0.6;
+    color: #ffffff;
+    font-size: 15px;
+    text-decoration: none;
+    display: block;
+  }
+  .credits a:hover {
+    opacity: 1;
+  }

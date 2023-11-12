@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Librería Virtual</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <link rel="stylesheet" href="estylogaleria.css">
+</head>
+
+<body data-ng-app="libreriaApp" data-ng-controller="LibreriaController">
+  <div id="search-container">
+    <input type="text" data-ng-model="search" placeholder="Buscar por título...">
+    <div class='credits'>
+        <a href="../index.html" >Volver al inicio 🤓😎</a>
+    </div>
+  </div>
+  <div id="libros-container">
+    <div class="libro" data-ng-repeat="libro in libros | filter:search">
+      <div class="card">
+        <figure>
+          <img data-ng-src="{{libro.imagen}}" data-ng-alt="{{libro.titulo}}">
+        </figure>
+        <div class="contenido">
+          <h3>{{libro.titulo}}</h3>
+          <p>{{libro.descripcion}}</p>
+          <a data-ng-href="{{libro.enlace}}" target="_blank">Descargar {{libro.titulo}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ <script src="searchBooks.js"></script>
+</body>
+
+</html>
